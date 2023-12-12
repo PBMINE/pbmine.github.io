@@ -5,10 +5,16 @@ body, h1, h2, h3, p, ul {
     font-family: 'IBM Plex Sans', sans-serif; /* Apply IBM Plex Sans as default font */
 }
 
-/* Basic styles */
+/* Body style */
+body {
+    background-color: #1a1a1a; /* Dark background */
+    color: #fff; /* Light text color */
+}
+
+/* Header styles */
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: #000; /* Dark header background */
+    color: #fff; /* Light header text color */
     padding: 20px;
 }
 
@@ -36,6 +42,7 @@ header {
     padding: 20px;
 }
 
+/* Product announcement section */
 .product-announcement {
     display: flex;
     justify-content: space-between;
@@ -48,21 +55,35 @@ header {
     padding: 0 20px;
 }
 
-.product-image {
-    flex: 1;
-    padding: 0 20px;
+.announcement-details h1 {
+    font-size: 2.5em; /* Larger heading size */
+    margin-bottom: 20px;
+}
+
+.announcement-details p {
+    font-size: 1.2em; /* Larger paragraph size */
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.product-image img {
+    max-width: 100%; /* Responsive image */
+    height: auto;
+    border-radius: 10px; /* Rounded corners for the image */
 }
 
 .btn {
     display: inline-block;
     padding: 10px 20px;
     margin-top: 20px;
-    background-color: #333;
-    color: #fff;
+    background-color: #fff; /* White button background */
+    color: #000; /* Dark button text color */
     text-decoration: none;
     border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 .btn:hover {
-    background-color: #555;
+    background-color: #ddd; /* Light background on hover */
+    color: #000; /* Dark button text color on hover */
 }
