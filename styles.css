@@ -18,7 +18,7 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: url('path/to/your/image.jpg') no-repeat center center/cover; /* Add a valid image path */
+    background: url('Bliss.jpg') no-repeat center center/cover; /* Add a valid image path */
     position: relative;
     overflow: hidden;
 }
