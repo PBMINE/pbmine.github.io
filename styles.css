@@ -18,7 +18,7 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: url('Bliss.jpg') no-repeat center center/cover; /* Add a valid image path */
+    background: url('Skywallthing.jpg') no-repeat center center/cover; /* Add a valid image path */
     position: relative;
     overflow: hidden;
 }
@@ -85,16 +85,16 @@ nav ul li a:hover {
     padding: 15px 40px; /* Increase button size */
     font-size: 20px;
     border: none;
-    background: #ff4081;
+    background: #4081ff;
     color: #fff;
-    border-radius: 25px;
+    border-radius: 17px;
     cursor: pointer;
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .cta-button:hover {
     transform: scale(1.05);
-    background-color: #ff6585;
+    background-color: #00308e;
 }
 
 /* Footer */
