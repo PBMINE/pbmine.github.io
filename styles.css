@@ -18,7 +18,7 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: url('background.jpg') no-repeat center center/cover;
+    background: url('path/to/your/image.jpg') no-repeat center center/cover; /* Add a valid image path */
     position: relative;
     overflow: hidden;
 }
@@ -26,7 +26,7 @@ header {
 .blurred-bg {
     backdrop-filter: blur(10px);
     padding: 50px;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.6);
     border-radius: 15px;
     animation: fadeIn 1.5s ease;
 }
@@ -39,13 +39,13 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 0 25px; /* Increase spacing between menu items */
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px; /* Increase font size for nav links */
     transition: color 0.3s;
 }
 
@@ -55,18 +55,18 @@ nav ul li a:hover {
 
 /* Header Content */
 .header-content h1 {
-    font-size: 48px;
+    font-size: 64px; /* Make the heading larger */
     margin-bottom: 15px;
 }
 
 .header-content p {
-    font-size: 20px;
+    font-size: 24px; /* Increase paragraph size */
     margin-bottom: 25px;
 }
 
 .cta-button {
-    padding: 10px 30px;
-    font-size: 18px;
+    padding: 15px 40px; /* Increase button size */
+    font-size: 20px;
     border: none;
     background: #ff4081;
     color: #fff;
@@ -82,24 +82,24 @@ nav ul li a:hover {
 
 /* Main Content */
 .main-content {
-    padding: 50px;
+    padding: 100px 50px;
     text-align: center;
     background-color: #2c2c2c;
 }
 
 .main-content h2 {
-    font-size: 36px;
+    font-size: 40px;
     margin-bottom: 20px;
 }
 
 .main-content p {
-    font-size: 18px;
+    font-size: 22px;
     line-height: 1.6;
 }
 
 /* Footer */
 footer {
-    padding: 20px;
+    padding: 30px;
     text-align: center;
     background-color: #1d1d1d;
 }
