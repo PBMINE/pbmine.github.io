@@ -104,7 +104,7 @@ nav ul li a:hover {
 
 /* Footer */
 footer {
-    padding: 20px;
+    padding: 10px; /* Reduced padding for the footer */
     text-align: center;
     background-color: #1d1d1d;
 }
@@ -149,5 +149,9 @@ footer {
 
     nav ul li {
         margin: 5px 0; /* Adjust spacing */
+    }
+    
+    footer {
+        padding: 5px; /* Further reduce padding on mobile */
     }
 }
