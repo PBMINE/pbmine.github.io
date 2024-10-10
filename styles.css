@@ -13,52 +13,57 @@ body {
 
 /* Header Styles */
 header {
-    height: 100vh;
     display: flex;
+    flex-direction: column; /* Stack items vertically */
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: url('Skywallthing.jpg') no-repeat center center/cover; /* Add a valid image path */
+    background: url('Skywallthing.jpg') no-repeat center center/cover;
     position: relative;
     overflow: hidden;
+    padding: 20px; /* Added padding for better spacing */
 }
 
 .blurred-bg {
     backdrop-filter: blur(10px);
-    padding: 50px;
+    padding: 30px; /* Padding for content inside */
     background: rgba(0, 0, 0, 0.6);
     border-radius: 15px;
     animation: fadeIn 1.5s ease;
+    width: 100%; /* Full width */
+    max-width: 800px; /* Limit max width for larger screens */
 }
 
+/* Navigation Styles */
 nav ul {
     display: flex;
+    flex-wrap: wrap; /* Allow items to wrap on small screens */
     justify-content: center;
     list-style: none;
     margin-bottom: 30px;
 }
 
 nav ul li {
-    margin: 0 25px; /* Increase spacing between menu items */
+    margin: 10px 15px; /* Adjust spacing */
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 20px; /* Increase font size for nav links */
+    font-size: 18px; /* Font size for navigation */
     transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: #4081ff;
+    color: #ff4081; /* Hover color */
 }
 
 /* Header Content */
 .header-content h1,
 .header-content p,
 .cta-button {
-    opacity: 0; /* Hidden initially */
-    transform: translateY(20px); /* Slightly pushed down */
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Push down for effect */
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
@@ -66,24 +71,24 @@ nav ul li a:hover {
 .header-content p.show,
 .cta-button.show {
     opacity: 1; /* Fade in */
-    transform: translateY(0); /* Move up to normal position */
+    transform: translateY(0); /* Move up to position */
 }
 
 .header-content h1 {
-    font-size: 64px; /* Larger heading size */
+    font-size: 48px; /* Heading size */
     margin-bottom: 15px;
-    font-weight: 700; /* Make the heading bold */
+    font-weight: 700;
 }
 
 .header-content p {
-    font-size: 24px; /* Increase paragraph size */
+    font-size: 20px; /* Paragraph size */
     margin-bottom: 25px;
-    font-weight: 700; /* Make the paragraph bold */
+    font-weight: 700; 
 }
 
 .cta-button {
-    padding: 15px 40px; /* Increase button size */
-    font-size: 20px;
+    padding: 15px 40px; /* Button padding */
+    font-size: 18px; /* Font size */
     border: none;
     background: #4081ff;
     color: #fff;
@@ -93,13 +98,13 @@ nav ul li a:hover {
 }
 
 .cta-button:hover {
-    transform: scale(1.05);
-    background-color: #00308e;
+    transform: scale(1.05); /* Hover effect */
+    background-color: #00308e; /* Darker on hover */
 }
 
 /* Footer */
 footer {
-    padding: 30px;
+    padding: 20px;
     text-align: center;
     background-color: #1d1d1d;
 }
@@ -113,5 +118,36 @@ footer {
     100% {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    header {
+        padding: 20px; /* Ensure proper padding */
+    }
+
+    .header-content h1 {
+        font-size: 30px; /* Smaller heading for mobile */
+        margin-bottom: 10px; /* Reduced margin */
+    }
+
+    .header-content p {
+        font-size: 16px; /* Smaller paragraph for mobile */
+        margin-bottom: 15px; /* Adjust margin */
+    }
+
+    .cta-button {
+        padding: 10px 20px; /* Smaller button size */
+        font-size: 16px; /* Font size */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack navigation items */
+        align-items: center; /* Center navigation items */
+    }
+
+    nav ul li {
+        margin: 5px 0; /* Adjust spacing */
     }
 }
