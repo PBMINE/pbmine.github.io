@@ -13,7 +13,7 @@ body {
 
 /* Header Styles */
 header {
-    height: 100vh;
+    height: auto; /* Allow header to adjust its height */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,7 +25,7 @@ header {
 
 .blurred-bg {
     backdrop-filter: blur(10px);
-    padding: 50px;
+    padding: 20px; /* Reduced padding for mobile */
     background: rgba(0, 0, 0, 0.6);
     border-radius: 15px;
     animation: fadeIn 1.5s ease;
@@ -39,7 +39,7 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 25px; /* Increase spacing between menu items */
+    margin: 0 15px; /* Adjusted margin for mobile */
 }
 
 nav ul li a {
@@ -50,7 +50,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #ff4081;
+    color: #4081ff;
 }
 
 /* Header Content */
@@ -116,52 +116,33 @@ footer {
     }
 }
 
-/* Responsive Design for Mobile */
+/* Mobile Styles */
 @media (max-width: 768px) {
     header {
-        height: auto; /* Allow auto height for small screens */
-        padding-top: 20px;
+        height: auto; /* Allow header to adjust its height */
+        padding: 20px; /* Add padding for mobile */
     }
 
-    .blurred-bg {
-        padding: 20px; /* Reduce padding on smaller screens */
-        max-width: 95%; /* Wider for small screens */
+    .header-content h1 {
+        font-size: 36px; /* Smaller font size for mobile */
+        margin-bottom: 10px; /* Reduced margin */
+    }
+
+    .header-content p {
+        font-size: 16px; /* Smaller font size for mobile */
+        margin-bottom: 15px; /* Adjust margin */
+    }
+
+    .cta-button {
+        padding: 10px 20px; /* Smaller button size */
+        font-size: 18px; /* Smaller font size for mobile */
     }
 
     nav ul {
-        flex-direction: column; /* Stack navigation vertically on mobile */
-        margin-bottom: 15px;
+        flex-direction: column; /* Stack the nav items vertically */
     }
 
     nav ul li {
-        margin: 10px 0; /* Adjust margin between vertical nav items */
-    }
-
-    .header-content h1 {
-        font-size: 36px; /* Reduce heading size for mobile */
-    }
-
-    .header-content p {
-        font-size: 18px; /* Smaller text for mobile */
-    }
-
-    .cta-button {
-        font-size: 16px; /* Adjust button font for mobile */
-        padding: 10px 25px; /* Smaller button for mobile */
-    }
-}
-
-@media (max-width: 480px) {
-    .header-content h1 {
-        font-size: 28px; /* Smaller heading for very small screens */
-    }
-
-    .header-content p {
-        font-size: 16px; /* Smaller paragraph */
-    }
-
-    .cta-button {
-        font-size: 14px; /* Adjust button font size for smaller screens */
-        padding: 8px 20px; /* Smaller button */
+        margin: 10px 0; /* Adjust spacing between nav items */
     }
 }
