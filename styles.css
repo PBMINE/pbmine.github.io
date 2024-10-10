@@ -40,17 +40,17 @@ nav ul {
     flex-wrap: wrap; /* Allow items to wrap on small screens */
     justify-content: center;
     list-style: none;
-    margin-bottom: 30px;
+    margin-bottom: 20px; /* Reduced margin for better spacing */
 }
 
 nav ul li {
-    margin: 10px 15px; /* Adjust spacing */
+    margin: 5px 10px; /* Adjusted spacing */
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 18px; /* Font size for navigation */
+    font-size: 16px; /* Adjusted font size for navigation */
     transition: color 0.3s;
 }
 
@@ -76,19 +76,19 @@ nav ul li a:hover {
 
 .header-content h1 {
     font-size: 48px; /* Heading size */
-    margin-bottom: 15px;
+    margin-bottom: 10px; /* Adjusted margin */
     font-weight: 700;
 }
 
 .header-content p {
     font-size: 20px; /* Paragraph size */
-    margin-bottom: 25px;
+    margin-bottom: 15px; /* Adjusted margin */
     font-weight: 700; 
 }
 
 .cta-button {
-    padding: 15px 40px; /* Button padding */
-    font-size: 18px; /* Font size */
+    padding: 10px 30px; /* Button padding */
+    font-size: 16px; /* Font size */
     border: none;
     background: #4081ff;
     color: #fff;
@@ -104,9 +104,10 @@ nav ul li a:hover {
 
 /* Footer */
 footer {
-    padding: 10px; /* Reduced padding for the footer */
+    padding: 5px; /* Reduced padding for the footer */
     text-align: center;
     background-color: #1d1d1d;
+    font-size: 14px; /* Smaller font size in the footer */
 }
 
 /* Keyframes for Animations */
@@ -129,12 +130,12 @@ footer {
 
     .header-content h1 {
         font-size: 30px; /* Smaller heading for mobile */
-        margin-bottom: 10px; /* Reduced margin */
+        margin-bottom: 5px; /* Reduced margin */
     }
 
     .header-content p {
         font-size: 16px; /* Smaller paragraph for mobile */
-        margin-bottom: 15px; /* Adjust margin */
+        margin-bottom: 10px; /* Adjust margin */
     }
 
     .cta-button {
@@ -153,5 +154,6 @@ footer {
     
     footer {
         padding: 5px; /* Further reduce padding on mobile */
+        font-size: 12px; /* Smaller font size for mobile footer */
     }
 }
