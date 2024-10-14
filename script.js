@@ -34,8 +34,15 @@ window.addEventListener('load', () => {
         });
     };
 
-    // Listen to the scroll event and run the animation handler
+    // Debounce scroll event for better performance
+    let scrollTimeout;
     window.addEventListener("scroll", () => {
-        handleScrollAnimation();
+        if (scrollTimeout) clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            handleScrollAnimation();
+        }, 100); // Adjust the delay as needed
     });
+
+    // Run initial check on page load to catch elements in view
+    handleScrollAnimation();
 });
