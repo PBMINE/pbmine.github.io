@@ -1,94 +1,104 @@
-/* Global Styles */
+=/* Global Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     color: #fff;
     background-color: #1d1d1d;
     font-family: 'Noto Sans', sans-serif; /* Noto Sans Bold */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 /* Header Styles */
 header {
+    flex: 1; /* Ensures header takes up available space */
     display: flex;
-    flex-direction: column; /* Stack items vertically */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     background: url('Skywallthing.jpg') no-repeat center center/cover;
     position: relative;
     overflow: hidden;
-    padding: 20px; /* Added padding for better spacing */
+    padding: 20px;
 }
 
 .blurred-bg {
     backdrop-filter: blur(10px);
-    padding: 30px; /* Padding for content inside */
+    padding: 30px;
     background: rgba(0, 0, 0, 0.6);
     border-radius: 15px;
     animation: fadeIn 1.5s ease;
-    width: 100%; /* Full width */
-    max-width: 800px; /* Limit max width for larger screens */
+    width: 100%;
+    max-width: 800px;
 }
 
 /* Navigation Styles */
 nav ul {
     display: flex;
-    flex-wrap: wrap; /* Allow items to wrap on small screens */
+    flex-wrap: wrap;
     justify-content: center;
     list-style: none;
-    margin-bottom: 20px; /* Reduced margin for better spacing */
+    margin-bottom: 20px;
 }
 
 nav ul li {
-    margin: 5px 10px; /* Adjusted spacing */
+    margin: 5px 10px;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 16px; /* Adjusted font size for navigation */
+    font-size: 16px;
     transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: #ff4081; /* Hover color */
+    color: #ff4081;
 }
 
 /* Header Content */
 .header-content h1,
 .header-content p,
 .cta-button {
-    opacity: 0; /* Initially hidden */
-    transform: translateY(20px); /* Push down for effect */
+    opacity: 0;
+    transform: translateY(20px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .header-content h1.show,
 .header-content p.show,
 .cta-button.show {
-    opacity: 1; /* Fade in */
-    transform: translateY(0); /* Move up to position */
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .header-content h1 {
-    font-size: 48px; /* Heading size */
-    margin-bottom: 10px; /* Adjusted margin */
+    font-size: 48px;
+    margin-bottom: 10px;
     font-weight: 700;
 }
 
 .header-content p {
-    font-size: 20px; /* Paragraph size */
-    margin-bottom: 15px; /* Adjusted margin */
-    font-weight: 700; 
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-weight: 700;
 }
 
 .cta-button {
-    padding: 10px 30px; /* Button padding */
-    font-size: 16px; /* Font size */
+    padding: 10px 30px;
+    font-size: 16px;
     border: none;
     background: #4081ff;
     color: #fff;
@@ -98,16 +108,17 @@ nav ul li a:hover {
 }
 
 .cta-button:hover {
-    transform: scale(1.05); /* Hover effect */
-    background-color: #00308e; /* Darker on hover */
+    transform: scale(1.05);
+    background-color: #00308e;
 }
 
 /* Footer */
 footer {
-    padding: 5px; /* Reduced padding for the footer */
+    flex-shrink: 0;
+    padding: 5px;
     text-align: center;
     background-color: #1d1d1d;
-    font-size: 14px; /* Smaller font size in the footer */
+    font-size: 14px;
 }
 
 /* Keyframes for Animations */
@@ -125,35 +136,35 @@ footer {
 /* Mobile Styles */
 @media (max-width: 768px) {
     header {
-        padding: 20px; /* Ensure proper padding */
+        padding: 20px;
     }
 
     .header-content h1 {
-        font-size: 30px; /* Smaller heading for mobile */
-        margin-bottom: 5px; /* Reduced margin */
+        font-size: 30px;
+        margin-bottom: 5px;
     }
 
     .header-content p {
-        font-size: 16px; /* Smaller paragraph for mobile */
-        margin-bottom: 10px; /* Adjust margin */
+        font-size: 16px;
+        margin-bottom: 10px;
     }
 
     .cta-button {
-        padding: 10px 20px; /* Smaller button size */
-        font-size: 16px; /* Font size */
+        padding: 10px 20px;
+        font-size: 16px;
     }
 
     nav ul {
-        flex-direction: column; /* Stack navigation items */
-        align-items: center; /* Center navigation items */
+        flex-direction: column;
+        align-items: center;
     }
 
     nav ul li {
-        margin: 5px 0; /* Adjust spacing */
+        margin: 5px 0;
     }
     
     footer {
-        padding: 5px; /* Further reduce padding on mobile */
-        font-size: 12px; /* Smaller font size for mobile footer */
+        padding: 5px;
+        font-size: 12px;
     }
 }
