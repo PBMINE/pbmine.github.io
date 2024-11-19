@@ -1,48 +1,31 @@
-window.addEventListener('load', () => {
-    // Elements to animate on load (staggered fade-in)
-    const fadeElements = document.querySelectorAll('.fade-in');
+// Select the button
+const ctaButton = document.getElementById("cta-button");
 
-    // Add 'show' class after a slight delay for load animations
-    fadeElements.forEach((element, index) => {
-        setTimeout(() => {
-            element.classList.add('show');
-        }, index * 300); // Delay for each element (staggered effect)
+// Add a click event listener to the button
+ctaButton.addEventListener("click", () => {
+    // Change the button text
+    ctaButton.textContent = "Loading...";
+
+    // Simulate a delay to show a "loading" effect
+    setTimeout(() => {
+        ctaButton.textContent = "Welcome!";
+        // Dynamically change the hero message
+        const heroContent = document.querySelector(".hero-content");
+        heroContent.innerHTML = `
+            <h1>You're all set!</h1>
+            <p>Thank you for joining PBMINE. Start exploring now.</p>
+        `;
+    }, 2000); // Delay of 2 seconds
+});
+
+// Navbar hover effects
+const navbarLinks = document.querySelectorAll(".navbar a");
+
+navbarLinks.forEach(link => {
+    link.addEventListener("mouseenter", () => {
+        link.style.color = "#58a6ff";
     });
-
-    // Elements to animate on scroll (fade-in on scroll)
-    const scrollElements = document.querySelectorAll(".header-content h1, .header-content p, .cta-button");
-
-    // Function to check if an element is in the viewport
-    const elementInView = (el, dividend = 1) => {
-        const elementTop = el.getBoundingClientRect().top;
-        return (
-            elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
-        );
-    };
-
-    // Function to add class 'show' when an element is in view
-    const displayScrollElement = (element) => {
-        element.classList.add('show');
-    };
-
-    // Function to handle scrolling animation
-    const handleScrollAnimation = () => {
-        scrollElements.forEach((el) => {
-            if (elementInView(el, 1.25)) {
-                displayScrollElement(el);
-            }
-        });
-    };
-
-    // Debounce scroll event for better performance
-    let scrollTimeout;
-    window.addEventListener("scroll", () => {
-        if (scrollTimeout) clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(() => {
-            handleScrollAnimation();
-        }, 100); // Adjust the delay as needed
+    link.addEventListener("mouseleave", () => {
+        link.style.color = "#ffffff";
     });
-
-    // Run initial check on page load to catch elements in view
-    handleScrollAnimation();
 });
