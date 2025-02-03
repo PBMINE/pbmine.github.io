@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pbmine - Final Version</title>
+    <title>pbmine - Fixed Switch</title>
     <style>
         :root {
             /* Light Theme */
@@ -28,44 +28,44 @@
         body {
             margin: 0;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: url('Skywallthing.jpg') fixed center/cover;
+            background: url('skywallthing.jpg') fixed center/cover;
             min-height: 100vh;
             color: var(--text);
+            font-size: 16px;
             transition: background-color 0.3s ease;
         }
 
         .container {
             width: 90%;
-            max-width: 1440px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 2vh 0;
+            padding: 1rem 0;
         }
 
         .nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem 5%;
+            padding: 1rem 2%;
             background: var(--bg);
             border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
-            backdrop-filter: blur(10px);
-            z-index: 1000;
+            backdrop-filter: blur(8px);
         }
 
         .logo {
             font-weight: 700;
-            font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+            font-size: 1.25rem;
             color: var(--accent);
-            letter-spacing: -0.5px;
         }
 
+        /* Fixed Theme Switch */
         .theme-switch {
-            --switch-size: clamp(34px, 3.5vw, 40px);
             position: relative;
-            width: calc(var(--switch-size) * 1.76);
-            height: var(--switch-size);
+            display: inline-block;
+            width: 50px;
+            height: 28px;
         }
 
         .theme-switch input {
@@ -81,82 +81,52 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: var(--switch-bg);
+            background-color: var(--switch-bg);
             border-radius: 34px;
-            transition: 0.4s;
+            transition: .4s;
         }
 
         .slider:before {
             position: absolute;
             content: "";
-            height: calc(var(--switch-size) - 8px);
-            width: calc(var(--switch-size) - 8px);
+            height: 20px;
+            width: 20px;
             left: 4px;
             bottom: 4px;
-            background: var(--switch-handle);
+            background-color: var(--switch-handle);
             border-radius: 50%;
-            transition: 0.4s;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: .4s;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
 
         input:checked + .slider {
-            background: var(--accent);
+            background-color: var(--accent);
         }
 
         input:checked + .slider:before {
-            transform: translateX(calc(var(--switch-size) - 8px));
+            transform: translateX(22px);
         }
 
         .main-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: clamp(1rem, 3vw, 2.5rem);
-            margin-top: clamp(2rem, 5vh, 4rem);
+            grid-template-columns: 1fr 280px;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
         }
 
         .card {
             background: var(--bg);
             border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: clamp(1.5rem, 3vw, 2.5rem);
-            backdrop-filter: blur(8px);
-            min-height: 50vh;
-            max-height: 80vh;
-            overflow-y: auto;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-        }
-
-        h2 {
-            font-size: clamp(1.5rem, 2.2vw, 2rem);
-            margin: 0 0 clamp(1rem, 2vw, 1.5rem) 0;
-            color: var(--accent);
-        }
-
-        p {
-            font-size: clamp(1rem, 1.2vw, 1.2rem);
-            line-height: 1.6;
-            margin: 0 0 clamp(1rem, 2vw, 1.5rem);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 0.75rem 0;
+            backdrop-filter: blur(6px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
         }
 
         @media (max-width: 768px) {
-            .container {
-                width: 92%;
-                padding: 1.5vh 0;
-            }
-
-            .nav {
-                padding: 1rem 4%;
-            }
-
-            .card {
-                min-height: auto;
-                max-height: none;
-                padding: 1.5rem;
-            }
-
             .main-content {
                 grid-template-columns: 1fr;
-                gap: 1.5rem;
             }
         }
     </style>
@@ -174,38 +144,27 @@
         <div class="main-content">
             <div class="card">
                 <h2>Development Activity</h2>
-                <p>Track recent code contributions, pull requests, and project updates in real-time.</p>
-                <div class="activity-list">
-                    <!-- Add activity items here -->
-                </div>
+                <p>Optimized interface for 1080p displays</p>
             </div>
             
             <div class="card">
-                <h2>Repository Management</h2>
-                <p>Organize and manage your code repositories with version control and collaboration tools.</p>
-                <div class="repo-list">
-                    <!-- Add repository items here -->
-                </div>
+                <h2>Repositories</h2>
+                <p>Compact layout with proper scaling</p>
             </div>
         </div>
     </div>
 
     <script>
         const themeToggle = document.getElementById('theme-toggle');
-        const body = document.body;
-
-        function setTheme(isDark) {
-            body.classList.toggle('dark-mode', isDark);
+        const setTheme = (isDark) => {
+            document.body.classList.toggle('dark-mode', isDark);
             localStorage.setItem('theme', isDark ? 'dark' : 'light');
-        }
-
-        themeToggle.addEventListener('change', (e) => {
-            setTheme(e.target.checked);
-        });
-
-        // Initialize theme with system preference fallback
-        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const savedTheme = localStorage.getItem('theme') || (systemDark ? 'dark' : 'light');
+        };
+        
+        themeToggle.addEventListener('change', (e) => setTheme(e.target.checked));
+        
+        // Initialize theme
+        const savedTheme = localStorage.getItem('theme') || 'light';
         themeToggle.checked = savedTheme === 'dark';
         setTheme(savedTheme === 'dark');
     </script>
