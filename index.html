@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pbmine - Fixed Switch</title>
+    <title>pbmine - Compact UI</title>
     <style>
         :root {
             /* Light Theme */
@@ -31,22 +31,22 @@
             background: url('skywallthing.jpg') fixed center/cover;
             min-height: 100vh;
             color: var(--text);
-            font-size: 16px;
+            font-size: 15px;
             transition: background-color 0.3s ease;
         }
 
         .container {
             width: 90%;
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 1rem 0;
+            padding: 0.8rem 0;
         }
 
         .nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2%;
+            padding: 0.8rem 2%;
             background: var(--bg);
             border-bottom: 1px solid var(--border);
             position: sticky;
@@ -56,16 +56,16 @@
 
         .logo {
             font-weight: 700;
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             color: var(--accent);
         }
 
-        /* Fixed Theme Switch */
+        /* Compact Theme Switch */
         .theme-switch {
             position: relative;
             display: inline-block;
-            width: 50px;
-            height: 28px;
+            width: 45px;
+            height: 24px;
         }
 
         .theme-switch input {
@@ -89,14 +89,14 @@
         .slider:before {
             position: absolute;
             content: "";
-            height: 20px;
-            width: 20px;
-            left: 4px;
-            bottom: 4px;
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
             background-color: var(--switch-handle);
             border-radius: 50%;
             transition: .4s;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
         }
 
         input:checked + .slider {
@@ -104,29 +104,51 @@
         }
 
         input:checked + .slider:before {
-            transform: translateX(22px);
+            transform: translateX(19px);
         }
 
         .main-content {
             display: grid;
-            grid-template-columns: 1fr 280px;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
+            grid-template-columns: 1fr 240px;
+            gap: 1rem;
+            margin-top: 1.2rem;
         }
 
         .card {
             background: var(--bg);
             border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin: 0.75rem 0;
-            backdrop-filter: blur(6px);
-            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            border-radius: 6px;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            font-size: 1.1rem;
+            margin: 0 0 0.8rem 0;
+            color: var(--accent);
+        }
+
+        p {
+            font-size: 0.85rem;
+            line-height: 1.5;
+            margin: 0 0 0.8rem 0;
         }
 
         @media (max-width: 768px) {
+            .container {
+                width: 94%;
+                padding: 0.5rem 0;
+            }
+
             .main-content {
                 grid-template-columns: 1fr;
+                gap: 0.8rem;
+            }
+
+            .card {
+                padding: 0.8rem;
             }
         }
     </style>
@@ -144,12 +166,12 @@
         <div class="main-content">
             <div class="card">
                 <h2>Development Activity</h2>
-                <p>Optimized interface for 1080p displays</p>
+                <p>Compact interface optimized for better space utilization.</p>
             </div>
             
             <div class="card">
                 <h2>Repositories</h2>
-                <p>Compact layout with proper scaling</p>
+                <p>Space-efficient repository management panel.</p>
             </div>
         </div>
     </div>
