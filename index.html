@@ -3,187 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pbmine - Minimal UI</title>
+    <title>pbmine - Micro UI</title>
     <style>
         :root {
-            /* Light Theme */
-            --bg: rgba(255, 255, 255, 0.97);
-            --text: #1a1a1a;
-            --accent: #2188ff;
-            --border: rgba(0, 0, 0, 0.08);
-            --switch-bg: #e0e0e0;
-            --switch-handle: #ffffff;
-        }
-
-        .dark-mode {
-            /* Dark Theme */
-            --bg: rgba(16, 25, 40, 0.97);
-            --text: #e3eaf2;
-            --accent: #58a6ff;
-            --border: rgba(255, 255, 255, 0.1);
-            --switch-bg: #4a4a4a;
-            --switch-handle: #e0e0e0;
-        }
-
-        body {
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: url('skywallthing.jpg') fixed center/cover;
-            min-height: 100vh;
-            color: var(--text);
-            font-size: 14px;
-            line-height: 1.4;
-        }
-
-        .container {
-            width: 94%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0.5rem 0;
-        }
-
-        .nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.6rem 2%;
-            background: var(--bg);
-            border-bottom: 1px solid var(--border);
-            position: sticky;
-            top: 0;
-            backdrop-filter: blur(6px);
-        }
-
-        .logo {
-            font-weight: 700;
-            font-size: 1rem;
-            color: var(--accent);
-        }
-
-        /* Micro Theme Switch */
-        .theme-switch {
-            position: relative;
-            display: inline-block;
-            width: 40px;
-            height: 20px;
-        }
-
-        .theme-switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: var(--switch-bg);
-            border-radius: 34px;
-            transition: .3s;
-        }
-
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 16px;
-            width: 16px;
-            left: 2px;
-            bottom: 2px;
-            background-color: var(--switch-handle);
-            border-radius: 50%;
-            transition: .3s;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
-        }
-
-        input:checked + .slider {
-            background-color: var(--accent);
-        }
-
-        input:checked + .slider:before {
-            transform: translateX(18px);
-        }
-
-        .main-content {
-            display: grid;
-            grid-template-columns: 1fr 200px;
-            gap: 0.75rem;
-            margin-top: 1rem;
-        }
-
-        .card {
-            background: var(--bg);
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            padding: 0.75rem;
-            margin: 0.4rem 0;
-            backdrop-filter: blur(4px);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-
-        h2 {
-            font-size: 0.95rem;
-            margin: 0 0 0.6rem 0;
-            color: var(--accent);
-        }
-
-        p {
-            font-size: 0.8rem;
-            margin: 0 0 0.6rem 0;
-        }
-
-        @media (max-width: 768px) {
-            body {
-                font-size: 13px;
-            }
-            
-            .main-content {
-                grid-template-columns: 1fr;
-                gap: 0.6rem;
-            }
-            
-            .card {
-                padding: 0.6rem;
-            }
-        }
+            --bg: rgba(255,255,255,0.98);--text:#111;--accent:#2188ff;--border:rgba(0,0,0,0.05);
+            --switch-bg:#ddd;--switch-handle:#fff;}.dark-mode{--bg:rgba(16,25,40,0.98);--text:#eef;
+            --accent:#58a6ff;--border:rgba(255,255,255,0.08);--switch-bg:#444;--switch-handle:#ddd;}
+        body{margin:0;font-family:system-ui;background:url('skywallthing.jpg') fixed center/cover;
+            min-height:100vh;color:var(--text);font-size:13px;line-height:1.3;}
+        .container{width:98%;max-width:800px;margin:0 auto;padding:0.3rem 0;}
+        .nav{display:flex;justify-content:space-between;align-items:center;padding:0.4rem 1%;
+            background:var(--bg);border-bottom:1px solid var(--border);position:sticky;top:0;
+            backdrop-filter:blur(3px);}
+        .logo{font-weight:600;font-size:0.9rem;color:var(--accent);}
+        .theme-switch{position:relative;width:36px;height:18px;}
+        .slider{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;
+            background:var(--switch-bg);border-radius:9px;transition:.2s;}
+        .slider:before{content:"";position:absolute;height:14px;width:14px;left:2px;bottom:2px;
+            background:var(--switch-handle);border-radius:50%;transition:.2s;box-shadow:0 0 2px rgba(0,0,0,0.1);}
+        input:checked + .slider{background:var(--accent);}
+        input:checked + .slider:before{transform:translateX(16px);}
+        .main-content{display:grid;grid-template-columns:1fr 180px;gap:0.5rem;margin-top:0.8rem;}
+        .card{background:var(--bg);border:1px solid var(--border);border-radius:3px;
+            padding:0.6rem;margin:0.3rem 0;backdrop-filter:blur(2px);box-shadow:0 1px 3px rgba(0,0,0,0.03);}
+        h2{font-size:0.85rem;margin:0 0 0.4rem;color:var(--accent);}
+        p{font-size:0.75rem;margin:0 0 0.4rem;}
+        @media (max-width:768px){.main-content{grid-template-columns:1fr;gap:0.4rem;}}
     </style>
 </head>
 <body>
-    <nav class="nav">
-        <div class="logo">pbmine</div>
-        <label class="theme-switch">
-            <input type="checkbox" id="theme-toggle">
-            <span class="slider"></span>
-        </label>
-    </nav>
-
-    <div class="container">
-        <div class="main-content">
-            <div class="card">
-                <h2>Activity</h2>
-                <p>Compact dev tracking</p>
-            </div>
-            
-            <div class="card">
-                <h2>Repos</h2>
-                <p>Mini repository panel</p>
-            </div>
-        </div>
-    </div>
-
+    <nav class="nav"><div class="logo">pbmine</div><label class="theme-switch">
+        <input type="checkbox" id="theme-toggle"><span class="slider"></span></label></nav>
+    <div class="container"><div class="main-content">
+        <div class="card"><h2>Activity</h2><p>Micro interface</p></div>
+        <div class="card"><h2>Repos</h2><p>Tiny panel</p></div>
+    </div></div>
     <script>
-        const themeToggle = document.getElementById('theme-toggle');
-        const setTheme = (isDark) => {
-            document.body.classList.toggle('dark-mode', isDark);
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
-        };
-        themeToggle.addEventListener('change', (e) => setTheme(e.target.checked));
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        themeToggle.checked = savedTheme === 'dark';
-        setTheme(savedTheme === 'dark');
+        const t=document.getElementById('theme-toggle'),s=isDark=>{
+            document.body.classList.toggle('dark-mode',isDark);localStorage.setItem('theme',isDark?'dark':'light')};
+        t.addEventListener('change',e=>s(e.target.checked));const st=localStorage.getItem('theme')||'light';
+        t.checked=st==='dark';s(st==='dark');
     </script>
 </body>
 </html>
