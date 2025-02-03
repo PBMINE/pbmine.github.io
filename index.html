@@ -3,37 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pbmine - Sky Theme</title>
+    <title>pbmine - Stable Version</title>
     <style>
         :root {
             /* Light Theme */
-            --bg-overlay: rgba(255, 255, 255, 0.9);
-            --text-color: #1a1a1a;
-            --accent-color: #2188ff;
-            --border-color: rgba(0, 0, 0, 0.1);
+            --bg: rgba(255, 255, 255, 0.95);
+            --text: #1a1a1a;
+            --accent: #2188ff;
+            --border: rgba(0, 0, 0, 0.1);
+            --switch-bg: #e0e0e0;
+            --switch-handle: #fff;
         }
 
         .dark-mode {
             /* Dark Theme */
-            --bg-overlay: rgba(16, 25, 40, 0.9);
-            --text-color: #e3eaf2;
-            --accent-color: #58a6ff;
-            --border-color: rgba(255, 255, 255, 0.1);
+            --bg: rgba(16, 25, 40, 0.95);
+            --text: #e3eaf2;
+            --accent: #58a6ff;
+            --border: rgba(255, 255, 255, 0.15);
+            --switch-bg: #4a4a4a;
+            --switch-handle: #d4d4d4;
         }
 
         body {
             margin: 0;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-image: url('Skywallthing.jpg'); /* Your sky background image */
-            background-size: cover;
-            background-attachment: fixed;
+            background: url('Skywallthing.jpg') fixed center/cover;
             min-height: 100vh;
-            color: var(--text-color);
-            transition: all 0.3s ease;
+            color: var(--text);
+            transition: background-color 0.3s ease;
         }
 
         .container {
-            max-width: 1280px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -43,8 +45,8 @@
             justify-content: space-between;
             align-items: center;
             padding: 1rem 2rem;
-            background: var(--bg-overlay);
-            border-bottom: 1px solid var(--border-color);
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
             backdrop-filter: blur(10px);
@@ -53,7 +55,7 @@
         .logo {
             font-weight: 700;
             font-size: 1.5rem;
-            color: var(--accent-color);
+            color: var(--accent);
         }
 
         .theme-switch {
@@ -76,9 +78,9 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: #ccc;
-            transition: .4s;
+            background: var(--switch-bg);
             border-radius: 34px;
+            transition: 0.4s;
         }
 
         .slider:before {
@@ -88,13 +90,14 @@
             width: 26px;
             left: 4px;
             bottom: 4px;
-            background-color: white;
-            transition: .4s;
+            background: var(--switch-handle);
             border-radius: 50%;
+            transition: 0.4s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
 
         input:checked + .slider {
-            background-color: var(--accent-color);
+            background: var(--accent);
         }
 
         input:checked + .slider:before {
@@ -102,10 +105,10 @@
         }
 
         .card {
-            background: var(--bg-overlay);
-            border: 1px solid var(--border-color);
+            background: var(--bg);
+            border: 1px solid var(--border);
             border-radius: 8px;
-            padding: 1.5rem;
+            padding: 2rem;
             margin: 1rem 0;
             backdrop-filter: blur(8px);
         }
@@ -115,6 +118,16 @@
             grid-template-columns: 1fr 300px;
             gap: 2rem;
             margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav {
+                padding: 1rem;
+            }
         }
     </style>
 </head>
@@ -131,32 +144,33 @@
         <div class="main-content">
             <div class="card">
                 <h2>Recent Activity</h2>
-                <p>No recent activity to show</p>
+                <p>Example activity item</p>
             </div>
             
             <div class="card">
                 <h2>Repositories</h2>
-                <p>No repositories available</p>
+                <p>Example repository</p>
             </div>
         </div>
     </div>
 
     <script>
         const themeToggle = document.getElementById('theme-toggle');
-        
-        function setTheme(theme) {
-            document.body.classList.toggle('dark-mode', theme === 'dark');
-            localStorage.setItem('theme', theme);
+        const body = document.body;
+
+        function setTheme(isDark) {
+            body.classList.toggle('dark-mode', isDark);
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
         }
 
         themeToggle.addEventListener('change', (e) => {
-            setTheme(e.target.checked ? 'dark' : 'light');
+            setTheme(e.target.checked);
         });
 
         // Initialize theme
         const savedTheme = localStorage.getItem('theme') || 'light';
         themeToggle.checked = savedTheme === 'dark';
-        setTheme(savedTheme);
+        setTheme(savedTheme === 'dark');
     </script>
 </body>
 </html>
