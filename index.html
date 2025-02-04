@@ -7,15 +7,8 @@
     <style>
         @font-face {
             font-family: "Retro";
-            src: url("retro.woff2") format("woff2");
-            font-weight: 400;
-        }
-
-        body, button {
-            font-family: "Retro", monospace;
+            src: local("Courier New"), local("monospace");
             letter-spacing: 1px;
-            line-height: 1.4;
-            image-rendering: pixelated;
         }
 
         body {
@@ -26,14 +19,41 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            font-family: "Retro", monospace;
+            image-rendering: pixelated;
         }
 
-        /* Pixel Theme Switch */
+        /* Pixel-perfect border simulation */
+        .pixel-border {
+            position: relative;
+            background: #1a2a28;
+            border: 4px solid #000;
+            box-shadow: 
+                4px 0 0 #3a5a58,
+                0 4px 0 #3a5a58,
+                inset 4px 0 0 #3a5a58,
+                inset 0 4px 0 #3a5a58;
+            padding: 16px;
+            margin: 8px;
+            color: #ffde4c;
+        }
+
+        .pixel-border::before {
+            content: "";
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            border: 2px solid #ffde4c;
+            pointer-events: none;
+        }
+
+        /* Theme Switch */
         .theme-switch {
             position: relative;
             width: 60px;
             height: 24px;
-            margin: 10px;
         }
 
         .theme-switch input {
@@ -49,9 +69,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: #1a2a28;
-            border: 2px solid #000;
-            border-top-color: #3a5a58;
+            background: #000;
+            border: 2px solid #3a5a58;
         }
 
         .slider:before {
@@ -70,45 +89,17 @@
             background: #58a6ff;
         }
 
-        /* Pixel Card Style */
-        .card {
-            background: #1a2a28;
-            border: 4px solid;
-            border-image: url("border-sprite.png") 8 fill;
-            border-image-width: 16px;
-            color: #ffde4c;
-            padding: 20px;
-            margin: 10px;
-            max-width: 400px;
-            filter: drop-shadow(4px 4px 0 rgba(0,0,0,0.3));
-        }
-
-        .nav {
-            background: #1a2a28;
-            border: 4px solid;
-            border-image: url("border-sprite.png") 8 fill;
-            border-image-width: 16px;
-            padding: 10px 20px;
-            margin: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            max-width: 600px;
-        }
-
         button {
-            background: #1a2a28;
+            background: #000;
             color: #ffde4c;
-            border: 2px solid #000;
-            border-top-color: #3a5a58;
-            padding: 6px 12px;
-            cursor: pointer;
+            border: 2px solid #3a5a58;
+            padding: 4px 8px;
             margin: 4px;
+            cursor: pointer;
         }
 
         button:hover {
-            background: #2d4341;
+            background: #3a5a58;
         }
 
         .logo {
@@ -119,7 +110,7 @@
     </style>
 </head>
 <body>
-    <nav class="nav">
+    <nav class="pixel-border">
         <div class="logo">pbmine</div>
         <label class="theme-switch">
             <input type="checkbox" id="theme-toggle">
@@ -127,17 +118,17 @@
         </label>
     </nav>
 
-    <div class="card">
+    <div class="pixel-border">
         <h2>Recent Activity</h2>
-        <p>🔨 Fixed pixel border rendering</p>
-        <p>🔄 Updated retro theme switcher</p>
+        <p>🔧 Fixed border rendering</p>
+        <p>🔄 Updated theme system</p>
         <button>View More</button>
     </div>
 
-    <div class="card">
+    <div class="pixel-border">
         <h2>Repositories</h2>
-        <p>📦 pixel-ui-core</p>
-        <p>🎮 retro-components</p>
+        <p>📦 core-system</p>
+        <p>🖥️ ui-components</p>
         <button>Create New</button>
     </div>
 
