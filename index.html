@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pbmine - Retro Modern</title>
+    <title>pbmine - Neon Retro</title>
     <style>
         @font-face {
             font-family: "Retro";
@@ -13,12 +13,13 @@
         }
 
         :root {
-            --bg: #2d4341;
-            --card-bg: rgba(26, 42, 40, 0.95);
-            --border-dark: #182927;
-            --border-light: #3a5a58;
-            --accent: #ffde4c;
-            --text: #e3eaf2;
+            --bg: #1a1c2c;
+            --card-bg: rgba(32, 34, 52, 0.95);
+            --border-dark: #1e1f2e;
+            --border-light: #41486b;
+            --accent: #ff7f7f;
+            --accent2: #7fd9ff;
+            --text: #e3e7f2;
         }
 
         body {
@@ -44,8 +45,8 @@
             margin: 15px;
             position: relative;
             box-shadow:
-                0 4px 8px rgba(0,0,0,0.2),
-                0 8px 16px rgba(0,0,0,0.1),
+                0 4px 8px rgba(0,0,0,0.3),
+                0 8px 16px rgba(0,0,0,0.2),
                 inset 1px 1px 0 var(--border-light),
                 inset -1px -1px 0 var(--border-dark);
             max-width: 500px;
@@ -53,8 +54,17 @@
             transition: transform 0.2s, box-shadow 0.2s;
         }
 
+        .pixel-panel:hover {
+            transform: translateY(-2px);
+            box-shadow:
+                0 6px 12px rgba(0,0,0,0.4),
+                0 12px 24px rgba(0,0,0,0.25),
+                inset 1px 1px 0 var(--border-light),
+                inset -1px -1px 0 var(--border-dark);
+        }
+
         .neo-btn {
-            background: linear-gradient(145deg, #1a2a28, #213634);
+            background: linear-gradient(145deg, #2a2c3c, #33354a);
             color: var(--accent);
             border: 2px solid;
             border-color: var(--border-light) var(--border-dark) var(--border-dark) var(--border-light);
@@ -70,6 +80,15 @@
             font-size: 0.9rem;
         }
 
+        .neo-btn:hover {
+            background: linear-gradient(145deg, #33354a, #2a2c3c);
+            color: var(--accent2);
+            box-shadow:
+                3px 3px 0 rgba(0,0,0,0.3),
+                inset 1px 1px 0 var(--border-light);
+            transform: translate(-1px, -1px);
+        }
+
         .theme-switch {
             position: relative;
             width: 60px;
@@ -83,7 +102,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: #1a2a28;
+            background: #2a2c3c;
             border: 2px solid;
             border-color: var(--border-light) var(--border-dark) var(--border-dark) var(--border-light);
             box-shadow: inset 1px 1px 0 var(--border-light);
@@ -104,7 +123,7 @@
 
         input:checked + .theme-slider:before {
             transform: translateX(28px);
-            background: #58a6ff;
+            background: var(--accent2);
         }
 
         .logo {
@@ -128,8 +147,17 @@
             border: 3px solid;
             border-color: var(--border-light) var(--border-dark) var(--border-dark) var(--border-light);
             box-shadow:
-                0 4px 8px rgba(0,0,0,0.2),
+                0 4px 8px rgba(0,0,0,0.3),
                 inset 1px 1px 0 var(--border-light);
+        }
+
+        h2 {
+            color: var(--accent2);
+            text-shadow: 1px 1px 0 rgba(0,0,0,0.3);
+        }
+
+        p {
+            color: var(--text);
         }
     </style>
 </head>
@@ -144,14 +172,14 @@
 
     <div class="pixel-panel">
         <h2>📁 Recent Activity</h2>
-        <p>🔄 Updated font system</p>
-        <p>🔧 Fixed retro rendering</p>
+        <p>🔄 Updated color scheme</p>
+        <p>🎨 Added neon accents</p>
         <button class="neo-btn">View Details</button>
     </div>
 
     <div class="pixel-panel">
         <h2>📦 Repositories</h2>
-        <p>⭐ retro-ui-system</p>
+        <p>⭐ neon-ui-system</p>
         <p>🛠️ core-engine</p>
         <button class="neo-btn">New Project</button>
     </div>
@@ -159,8 +187,8 @@
     <script>
         const themeToggle = document.getElementById('theme-toggle');
         const setTheme = (isDark) => {
-            document.documentElement.style.setProperty('--bg', isDark ? '#1a1a1a' : '#2d4341');
-            document.documentElement.style.setProperty('--card-bg', isDark ? 'rgba(40,40,40,0.95)' : 'rgba(26,42,40,0.95)');
+            document.documentElement.style.setProperty('--bg', isDark ? '#0e0f1c' : '#1a1c2c');
+            document.documentElement.style.setProperty('--card-bg', isDark ? 'rgba(24,26,42,0.95)' : 'rgba(32,34,52,0.95)');
             localStorage.setItem('theme', isDark ? 'dark' : 'light');
         };
         
