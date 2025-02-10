@@ -3,50 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pbmine - Pixel UI</title>
+    <title>pbmine - Working Pixel UI</title>
     <style>
-        @font-face {
-            font-family: "Retro";
-            src: local("Courier New"), local("monospace");
-            letter-spacing: 1px;
-        }
-
         body {
             background: #2d4341;
             min-height: 100vh;
             margin: 0;
             padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            font-family: "Retro", monospace;
+            font-family: 'Courier New', monospace;
+            color: #ffde4c;
             image-rendering: pixelated;
         }
 
-        /* Pixel-perfect border simulation */
-        .pixel-border {
-            position: relative;
+        /* Pixel-perfect container */
+        .pixel-box {
             background: #1a2a28;
-            border: 4px solid #000;
-            box-shadow: 
-                4px 0 0 #3a5a58,
-                0 4px 0 #3a5a58,
-                inset 4px 0 0 #3a5a58,
-                inset 0 4px 0 #3a5a58;
+            border: 4px solid;
+            border-color: #000 #3a5a58 #3a5a58 #000;
             padding: 16px;
-            margin: 8px;
-            color: #ffde4c;
-        }
-
-        .pixel-border::before {
-            content: "";
-            position: absolute;
-            top: -4px;
-            left: -4px;
-            right: -4px;
-            bottom: -4px;
-            border: 2px solid #ffde4c;
-            pointer-events: none;
+            margin: 10px;
+            max-width: 400px;
+            position: relative;
         }
 
         /* Theme Switch */
@@ -94,7 +71,7 @@
             color: #ffde4c;
             border: 2px solid #3a5a58;
             padding: 4px 8px;
-            margin: 4px;
+            margin: 4px 0;
             cursor: pointer;
         }
 
@@ -103,14 +80,25 @@
         }
 
         .logo {
-            color: #ffde4c;
             font-size: 1.5em;
+            margin: 0;
             text-shadow: 2px 2px #000;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background: #1a2a28;
+            border: 4px solid;
+            border-color: #000 #3a5a58 #3a5a58 #000;
+            margin: 10px;
         }
     </style>
 </head>
 <body>
-    <nav class="pixel-border">
+    <nav class="nav">
         <div class="logo">pbmine</div>
         <label class="theme-switch">
             <input type="checkbox" id="theme-toggle">
@@ -118,17 +106,17 @@
         </label>
     </nav>
 
-    <div class="pixel-border">
+    <div class="pixel-box">
         <h2>Recent Activity</h2>
-        <p>🔧 Fixed border rendering</p>
-        <p>🔄 Updated theme system</p>
+        <p>🔧 Fixed UI rendering</p>
+        <p>🔄 Updated components</p>
         <button>View More</button>
     </div>
 
-    <div class="pixel-border">
+    <div class="pixel-box">
         <h2>Repositories</h2>
-        <p>📦 core-system</p>
-        <p>🖥️ ui-components</p>
+        <p>📦 main-project</p>
+        <p>🖥️ ui-kit</p>
         <button>Create New</button>
     </div>
 
