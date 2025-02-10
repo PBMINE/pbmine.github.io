@@ -3,11 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pbmine - NeoPixel UI</title>
+    <title>pbmine - Retro Modern</title>
     <style>
+        @font-face {
+            font-family: "Retro";
+            src: url("retro.woff2") format("woff2");
+            font-weight: 400;
+            font-style: normal;
+        }
+
         :root {
             --bg: #2d4341;
-            --card-bg: rgba(26, 42, 40, 0.9);
+            --card-bg: rgba(26, 42, 40, 0.95);
             --border-dark: #182927;
             --border-light: #3a5a58;
             --accent: #ffde4c;
@@ -19,13 +26,14 @@
             min-height: 100vh;
             margin: 0;
             padding: 20px;
-            font-family: 'Courier New', monospace;
+            font-family: "Retro", monospace;
             color: var(--text);
             image-rendering: pixelated;
             display: flex;
             flex-direction: column;
             align-items: center;
-            backdrop-filter: blur(4px);
+            letter-spacing: 1px;
+            line-height: 1.4;
         }
 
         .pixel-panel {
@@ -45,15 +53,6 @@
             transition: transform 0.2s, box-shadow 0.2s;
         }
 
-        .pixel-panel:hover {
-            transform: translateY(-2px);
-            box-shadow:
-                0 6px 12px rgba(0,0,0,0.3),
-                0 12px 24px rgba(0,0,0,0.15),
-                inset 1px 1px 0 var(--border-light),
-                inset -1px -1px 0 var(--border-dark);
-        }
-
         .neo-btn {
             background: linear-gradient(145deg, #1a2a28, #213634);
             color: var(--accent);
@@ -62,27 +61,13 @@
             padding: 8px 16px;
             margin: 8px 4px;
             cursor: pointer;
-            font-family: inherit;
+            font-family: "Retro", monospace;
             text-shadow: 1px 1px 0 rgba(0,0,0,0.3);
             box-shadow:
                 2px 2px 0 rgba(0,0,0,0.2),
                 inset 1px 1px 0 var(--border-light);
             transition: all 0.2s;
-        }
-
-        .neo-btn:hover {
-            background: linear-gradient(145deg, #213634, #1a2a28);
-            box-shadow:
-                3px 3px 0 rgba(0,0,0,0.3),
-                inset 1px 1px 0 var(--border-light);
-            transform: translate(-1px, -1px);
-        }
-
-        .neo-btn:active {
-            transform: translate(1px, 1px);
-            box-shadow: 
-                1px 1px 0 rgba(0,0,0,0.2),
-                inset 1px 1px 0 var(--border-light);
+            font-size: 0.9rem;
         }
 
         .theme-switch {
@@ -159,15 +144,15 @@
 
     <div class="pixel-panel">
         <h2>📁 Recent Activity</h2>
-        <p>🔄 Updated UI components</p>
-        <p>🔧 Fixed pixel rendering</p>
+        <p>🔄 Updated font system</p>
+        <p>🔧 Fixed retro rendering</p>
         <button class="neo-btn">View Details</button>
     </div>
 
     <div class="pixel-panel">
         <h2>📦 Repositories</h2>
-        <p>⭐ neo-pixel-ui</p>
-        <p>🛠️ core-system</p>
+        <p>⭐ retro-ui-system</p>
+        <p>🛠️ core-engine</p>
         <button class="neo-btn">New Project</button>
     </div>
 
@@ -175,7 +160,7 @@
         const themeToggle = document.getElementById('theme-toggle');
         const setTheme = (isDark) => {
             document.documentElement.style.setProperty('--bg', isDark ? '#1a1a1a' : '#2d4341');
-            document.documentElement.style.setProperty('--card-bg', isDark ? 'rgba(40,40,40,0.9)' : 'rgba(26,42,40,0.9)');
+            document.documentElement.style.setProperty('--card-bg', isDark ? 'rgba(40,40,40,0.95)' : 'rgba(26,42,40,0.95)');
             localStorage.setItem('theme', isDark ? 'dark' : 'light');
         };
         
