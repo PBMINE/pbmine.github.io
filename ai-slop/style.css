@@ -1,1 +1,263 @@
+@font-face {
+            font-family: "Chicago";
+            src: url("data:font/woff2;base64,d09GMgABAAAAAAZQAA0AAAAAC2QAAAYCAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhYbgRgcNAZgAEQRCAqHbIYiCwoAATYCJAMUBCAFhG0HUBsHCMgekiRIhAJBkCRZrP/fCZJ4+For3+/pPQIOgBWgI1CsE4VSRDqqujB5XMCvcgmyfmE3xfkCzMCZ+L/ZJxmdBbqQp5FGWFR3cGPK7Q4MNAr8Aw==") format("woff2");
+        }
 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Chicago", "Geneva", "Helvetica", sans-serif;
+            background: #c0c0c0 url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAFElEQVQIW2P8//+/MQMDA8MJBgYGAEcMAgFdTWTeAAAAAElFTkSuQmCC') repeat;
+            image-rendering: pixelated;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .desktop {
+            position: relative;
+            min-height: calc(100vh - 40px);
+        }
+
+        /* Classic Mac Window */
+        .window {
+            background: #ffffff;
+            border: 2px solid #000000;
+            box-shadow: 2px 2px 0 rgba(0,0,0,0.5);
+            margin-bottom: 20px;
+            max-width: 600px;
+            position: absolute;
+            display: none;
+        }
+
+        .window.visible {
+            display: block;
+        }
+
+        .title-bar {
+            background: #000000;
+            color: #ffffff;
+            padding: 2px 4px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 19px;
+            cursor: move;
+            user-select: none;
+        }
+
+        .title-bar-text {
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            margin-left: 4px;
+        }
+
+        .title-bar-controls {
+            display: flex;
+            gap: 2px;
+            align-items: center;
+        }
+
+        .window-button {
+            width: 12px;
+            height: 12px;
+            border: 1px solid #000000;
+            background: #ffffff;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .window-button.close::before {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #000000;
+            left: 2px;
+            top: 2px;
+        }
+
+        .window-content {
+            padding: 12px;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .window-content p {
+            margin-bottom: 10px;
+        }
+
+        /* Classic Mac Button */
+        .mac-button {
+            background: #ffffff;
+            border: 2px solid #000000;
+            padding: 4px 16px;
+            font-family: "Chicago", "Geneva", sans-serif;
+            font-size: 12px;
+            cursor: pointer;
+            box-shadow: 2px 2px 0 rgba(0,0,0,0.3);
+            margin-top: 8px;
+            margin-right: 8px;
+        }
+
+        .mac-button:active {
+            background: #000000;
+            color: #ffffff;
+            box-shadow: inset 2px 2px 0 rgba(0,0,0,0.5);
+        }
+
+        .mac-button:hover {
+            background: #f0f0f0;
+        }
+
+        /* Menu Bar */
+        .menu-bar {
+            background: #ffffff;
+            border: 2px solid #000000;
+            border-bottom: 1px solid #000000;
+            padding: 2px 8px;
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            font-size: 12px;
+            box-shadow: 2px 2px 0 rgba(0,0,0,0.5);
+            align-items: center;
+        }
+
+        .menu-item {
+            cursor: pointer;
+            padding: 2px 8px;
+            user-select: none;
+            position: relative;
+        }
+
+        .menu-item:hover {
+            background: #000000;
+            color: #ffffff;
+        }
+
+        .pb-logo {
+            font-weight: bold;
+            font-size: 14px;
+            padding: 2px 12px;
+            border-right: 1px solid #000000;
+        }
+
+        /* Dropdown menu */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #ffffff;
+            border: 2px solid #000000;
+            box-shadow: 2px 2px 0 rgba(0,0,0,0.5);
+            min-width: 150px;
+            z-index: 1000;
+        }
+
+        .dropdown-menu.active {
+            display: block;
+        }
+
+        .dropdown-item {
+            padding: 4px 12px;
+            cursor: pointer;
+            border-bottom: 1px solid #000000;
+        }
+
+        .dropdown-item:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-item:hover {
+            background: #000000;
+            color: #ffffff;
+        }
+
+        /* Desktop Icons */
+        .desktop-icon {
+            position: absolute;
+            text-align: center;
+            cursor: pointer;
+            padding: 8px;
+            width: 80px;
+        }
+
+        .desktop-icon.selected .icon-image {
+            background: #000000;
+            color: #ffffff;
+        }
+
+        .icon-image {
+            width: 48px;
+            height: 48px;
+            background: #ffffff;
+            border: 2px solid #000000;
+            margin: 0 auto 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+        }
+
+        .icon-label {
+            font-size: 10px;
+            background: #ffffff;
+            padding: 2px 4px;
+            border: 1px solid transparent;
+            display: inline-block;
+        }
+
+        .desktop-icon.selected .icon-label {
+            background: #000000;
+            color: #ffffff;
+        }
+
+        /* System 7 inset panel */
+        .inset-panel {
+            border: 2px solid #000000;
+            border-right-color: #ffffff;
+            border-bottom-color: #ffffff;
+            background: #ffffff;
+            padding: 8px;
+            margin: 8px 0;
+        }
+
+        /* Status text */
+        .status-badge {
+            display: inline-block;
+            padding: 2px 6px;
+            border: 1px solid #000000;
+            background: #ffffff;
+            font-size: 10px;
+            margin-right: 4px;
+            margin-top: 4px;
+        }
+
+        h2 {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            padding-bottom: 4px;
+            border-bottom: 1px solid #000000;
+        }
+
+        /* Draggable windows */
+        .window.dragging {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .menu-bar {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+        }
