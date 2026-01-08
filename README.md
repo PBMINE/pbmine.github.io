@@ -1,3 +1,5 @@
 # pbmine.github.io
-The website from pbmine
-Let upgrade it to be honest source of website is here
+---
+A static website hosted on github page
+~~It stil suck~~
+dont listen to it
