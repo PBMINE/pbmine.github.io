@@ -4,6 +4,7 @@
 }
 
 .text {
+    font-size: 10px;
     text-align: center;
     color: #87CEEB;
     font-family: monospace;
@@ -20,7 +21,7 @@
     padding-right: 20px;
     width:  fit-content;
     height: fit-content;
-    border: 5px solid #87CEEB;
+    border: 2px solid #87CEEB;
     box-shadow: 5px 5px 0px 3px #1f3b5294;
 }
 
@@ -28,7 +29,7 @@
     width:  fit-content;
     height: fit-content;
     padding-right: 20px;
-    border: 5px solid #87CEEB;
+    border: 2px solid #87CEEB;
     box-shadow: 5px 5px 0px 3px #1f3b5294;
 }
 
