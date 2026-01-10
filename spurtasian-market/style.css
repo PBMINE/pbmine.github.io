@@ -5,10 +5,10 @@
 
 .text {
     text-align: center;
-    color: black;
+    color: #87CEEB;
     font-family: monospace;
 }
 
 body {
-    background-color: azure;
+    background-color: #2e5779;
 }
