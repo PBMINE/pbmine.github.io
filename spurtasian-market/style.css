@@ -1,0 +1,14 @@
+.main {
+    margin: auto;
+    width: 50%;
+}
+
+.text {
+    text-align: center;
+    color: black;
+    font-family: monospace;
+}
+
+body {
+    background-color: azure;
+}
