@@ -22,7 +22,7 @@
     width:  fit-content;
     height: fit-content;
     border: 2px solid #87CEEB;
-    box-shadow: 5px 5px 0px 3px #1f3b5294;
+    box-shadow: 5px 5px 0px 2px #1f3b5294;
 }
 
 .containers {
@@ -30,7 +30,7 @@
     height: fit-content;
     padding-right: 20px;
     border: 2px solid #87CEEB;
-    box-shadow: 5px 5px 0px 3px #1f3b5294;
+    box-shadow: 5px 5px 0px 2px #1f3b5294;
 }
 
 .status {
