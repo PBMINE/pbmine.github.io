@@ -1,0 +1,42 @@
+[
+    {
+        "item": "Ancient Debris",
+        "price": "13D per block",
+        "stock": 0
+    },
+    {
+        "item": "Random Diamonds armour",
+        "price": "1D per piece",
+        "stock": 3
+    },
+    {
+        "item": "Sniffer Egg",
+        "price": "15D per egg",
+        "stock": 4
+    },
+    {
+        "item": "Bucket of Axolotl (random color)",
+        "price": "2 buckets per 1D",
+        "stock": 2
+    },
+    {
+        "item": "mixed bucket of tropical fish",
+        "price": "4 buckets per 1D",
+        "stock": 3
+    },
+    {
+        "item": "Clownfish",
+        "price": "1 bucket per 1D",
+        "stock": 5
+    },
+    {
+        "item": "Bucket of Tadpole",
+        "price": "1D per bucket",
+        "stock": 1
+    },
+    {
+        "item": "Bucket of Blue Axolotl",
+        "price": "1 bucket per 10DB",
+        "stock": 0
+    }
+]
