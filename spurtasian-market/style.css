@@ -31,12 +31,15 @@
     width:  fit-content;
     height: fit-content;
     box-shadow: 5px 5px 0px 1px #1f3b5294;
+    transform: translateY(20px);
+    opacity: 0;
 }
+
 
 .status {
     padding-left: 20px;
 }
 
 body {
-    background-color: #182e41;
+    background-image: linear-gradient(#315d81,#294049);
 }

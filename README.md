@@ -3,7 +3,7 @@ A static website hosted on github page
 This website include AI *slop* and mistyMC related website.
   
 Main page : https://pbmine.github.io/  
-Spurtasian Mall : https://pbmine.github.io/spurtasian-market/  
+Spurtasian Mall : https://pbmine.github.io/spurtasian-market/  (Noted that this will be removed after misty introduce it global index)
 AI *slop* : https://pbmine.github.io/ai-slop/  
   
 PBMINE 2021-2026

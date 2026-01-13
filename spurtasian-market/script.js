@@ -29,6 +29,28 @@ async function FetchJSON() {
         }).join('');
 
         container.innerHTML = shopHTML;
+
+        const newContainers = container.querySelectorAll('.containers');
+
+        newContainers.forEach((el, index) => {
+            el.animate(
+                [
+                    {   opacity: 0,
+                        transform: 'translateY(20px)'
+                    },
+                    {   opacity: 1,
+                        transform: 'translateY(0px)'
+                    }
+                ], 
+                {
+                    duration: 500, 
+                    easing: 'linear',
+                    fill: 'forwards', 
+                    delay: index * 100 
+                }
+            );
+        });
+
     } catch (error) {
         console.error('Error! We can\'t fetch data sorry!: ', error);
     }
