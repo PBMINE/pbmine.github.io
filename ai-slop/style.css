@@ -139,6 +139,11 @@
             color: #ffffff;
         }
 
+        img {
+            width: 20%;
+            height: auto;
+        }
+
         .pb-logo {
             font-weight: bold;
             font-size: 14px;

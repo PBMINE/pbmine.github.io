@@ -6,19 +6,24 @@
 .text {
     font-size: 10px;
     text-align: center;
-    color: #87CEEB;
+    color: #000000;
     font-family: monospace;
+}
+
+img {
+    width: 20%;
+    height: auto;
 }
 
 .ctext {
     padding-left: 20px;
     text-align: left;
-    color: #87CEEB;
+    color: #000000;
     font-family: monospace;
 }
 
 .scontainers {
-    border-image: url(button.png) 21 21 21 21 fill / 21px 21px 21px 21px;
+    border: 2px solid #000000;
     padding: 11px 21px 11px 0px;
     image-rendering: pixelated;
     width:  fit-content;
@@ -27,7 +32,7 @@
 }
 
 .containers {
-    border-image: url(windows.png) 15 27 6 15 fill / 15px 27px 6px 15px;
+    border: 2px solid #000000;
     padding: 15px 27px 6px 15px;
     image-rendering: pixelated;
     width:  fit-content;
@@ -43,5 +48,5 @@
 }
 
 body {
-    background-image: linear-gradient(#315d81,#294049);
+   color: #ffffff;
 }
